@@ -45,16 +45,29 @@ public class Person {
         this.shoes = Color.values()[RANDOM.nextInt(Color.values().length)];
     }
 
-    // Getters and setters for all attributes are required for Gson and GameService
+    // ===== Getters =====
     public String getName() { return name; }
+    public HairType getHair() { return hair; }
+    public Color getOuter() { return outer; }
+    public Color getInner() { return inner; }
+    public Color getPants() { return pants; }
+    public Color getSocks() { return socks; }
     public Sex getSex() { return sex; }
+    public Color getShoes() { return shoes; }
     public PersonType getPersonType() { return personType; }
+    public boolean isDead() { return isDead; }
 
+    // ===== Setters =====
     public void setName(String name) { this.name = name; }
+    public void setHair(HairType hair) { this.hair = hair; }
+    public void setOuter(Color outer) { this.outer = outer; }
+    public void setInner(Color inner) { this.inner = inner; }
+    public void setPants(Color pants) { this.pants = pants; }
+    public void setSocks(Color socks) { this.socks = socks; }
     public void setSex(Sex sex) { this.sex = sex; } // crucial for Gson
+    public void setShoes(Color shoes) { this.shoes = shoes; }
     public void setPersonType(PersonType personType) { this.personType = personType; }
     public void setDead(boolean dead) { isDead = dead; }
-    // ... add setters for other attributes if needed
 
     @Override
     public String toString() {

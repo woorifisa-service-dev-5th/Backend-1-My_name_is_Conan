@@ -22,11 +22,25 @@ public class TimeManager {
                 break;
             default:
                 next = Time.Morning;
+                // Increment day count when a new day begins
+                gameState.incrementCurrentDay();
                 break;
         }
 
         gameState.setCurrentTime(next);
         printTimeMessage(next);
+    }
+
+    // Add the missing passNight() method
+    public void passNight() {
+        // This method can simply advance the time, which will handle the day change.
+        System.out.println("\n[밤이 지났습니다.]");
+        advanceTime();
+    }
+
+    // Add the missing getCurrentDay() method
+    public int getCurrentDay() {
+        return gameState.getCurrentDay();
     }
 
     public void printTimeMessage(Time time) {
@@ -46,4 +60,3 @@ public class TimeManager {
         }
     }
 }
-
