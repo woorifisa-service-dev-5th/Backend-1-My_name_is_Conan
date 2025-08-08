@@ -8,16 +8,16 @@ import types.Sex;
 import java.util.Random;
 
 public class Person {
-    private static String name;
-    private static HairType hair;
-    private static Color outer;
-    private static Color inner;
-    private static Color pants;
-    private static Color socks;
-    private static Sex sex;
-    private static Color shoes;
-    private static PersonType personType;
-    private static boolean isDead;
+    private String name;
+    private HairType hair;
+    private Color outer;
+    private Color inner;
+    private Color pants;
+    private Color socks;
+    private Sex sex;
+    private Color shoes;
+    private PersonType personType;
+    private boolean isDead;
 
     private static final Random RANDOM = new Random();
 
@@ -36,6 +36,46 @@ public class Person {
         this.shoes = Color.values()[RANDOM.nextInt(Color.values().length)];
     }
 
+  //getter 만들어줘요~
+    
+	public String getName() {
+		return name;
+	}
 
-    //getter 만들어줘요~
+	public HairType getHair() {
+		return hair;
+	}
+
+	public Color getOuter() {
+		return outer;
+	}
+
+	public Color getInner() {
+		return inner;
+	}
+
+	public Color getPants() {
+		return pants;
+	}
+
+	public Color getSocks() {
+		return socks;
+	}
+
+	public Sex getSex() {
+		return sex;
+	}
+
+	public Color getShoes() {
+		return shoes;
+	}
+
+	public PersonType getPersonType() {
+		return personType;
+	}
+
+	public boolean isDead() {
+		return isDead;
+	}
+
 }
