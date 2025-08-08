@@ -7,8 +7,8 @@ import types.Sex;
 
 import java.util.Random;
 
-public class Person { // static 제거해야 렌덤하게 된다는데...
-    private String name;         
+public class Person {
+    private String name;
     private HairType hair;
     private Color outer;
     private Color inner;
@@ -42,7 +42,6 @@ public class Person { // static 제거해야 렌덤하게 된다는데...
         this.socks = Color.values()[RANDOM.nextInt(Color.values().length)];
         this.shoes = Color.values()[RANDOM.nextInt(Color.values().length)];
     }
-
     // Getter
     public String getName() { return name; }
     public HairType getHair() { return hair; }
