@@ -4,7 +4,6 @@ import types.Color;
 import types.HairType;
 import types.PersonType;
 import types.Sex;
-
 import java.util.Random;
 
 public class Person {
@@ -14,27 +13,30 @@ public class Person {
     private Color inner;
     private Color pants;
     private Color socks;
-    private Sex sex;
+    private Sex sex; // Gson will use a setter to fill this
     private Color shoes;
     private PersonType personType;
     private boolean isDead;
 
     private static final Random RANDOM = new Random();
 
-    // Gson이 사용할 기본 생성자
+    // Gson will use this default constructor.
     public Person() {}
+
+    // You can also use this constructor for manual creation.
+    public Person(String name, Sex sex) {
+        this.name = name;
+        this.sex = sex;
+    }
 
     public Person(String name, Sex sex, PersonType personType) {
         this.name = name;
-        this.personType = personType;
         this.sex = sex;
-        this.isDead = false;
-
-        randomizeAttributes();
+        this.personType = personType;
     }
 
-    // 랜덤 속성 부여 메서드
-    private void randomizeAttributes() {
+    // This method is used by GameService to assign random attributes
+    public void randomizeAttributes() {
         this.hair = HairType.values()[RANDOM.nextInt(HairType.values().length)];
         this.outer = Color.values()[RANDOM.nextInt(Color.values().length)];
         this.inner = Color.values()[RANDOM.nextInt(Color.values().length)];
@@ -42,24 +44,17 @@ public class Person {
         this.socks = Color.values()[RANDOM.nextInt(Color.values().length)];
         this.shoes = Color.values()[RANDOM.nextInt(Color.values().length)];
     }
-    // Getter
+
+    // Getters and setters for all attributes are required for Gson and GameService
     public String getName() { return name; }
-    public HairType getHair() { return hair; }
-    public Color getOuter() { return outer; }
-    public Color getInner() { return inner; }
-    public Color getPants() { return pants; }
-    public Color getSocks() { return socks; }
     public Sex getSex() { return sex; }
-    public Color getShoes() { return shoes; }
     public PersonType getPersonType() { return personType; }
-    public boolean isDead() { return isDead; }
 
+    public void setName(String name) { this.name = name; }
+    public void setSex(Sex sex) { this.sex = sex; } // crucial for Gson
+    public void setPersonType(PersonType personType) { this.personType = personType; }
     public void setDead(boolean dead) { isDead = dead; }
-
-    // Gson으로 읽어온 후 자동 랜덤 속성 채우기
-    public void afterJsonLoad() {
-        randomizeAttributes();
-    }
+    // ... add setters for other attributes if needed
 
     @Override
     public String toString() {

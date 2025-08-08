@@ -1,9 +1,4 @@
-package entity;
-
-import types.Color;
-import types.HairType;
-import types.PersonType;
-import types.Sex;
+package types;
 
 import java.util.Random;
 
