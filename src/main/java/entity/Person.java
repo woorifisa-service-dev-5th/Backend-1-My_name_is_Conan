@@ -7,8 +7,8 @@ import types.Sex;
 
 import java.util.Random;
 
-public class Person {
-    private String name;         // static 제거
+public class Person { // static 제거해야 렌덤하게 된다는데...
+    private String name;         
     private HairType hair;
     private Color outer;
     private Color inner;
