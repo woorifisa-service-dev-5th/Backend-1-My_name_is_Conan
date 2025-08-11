@@ -1,6 +1,6 @@
 package types;
 
-public enum Sex {
+public enum Gender {
     male,
     female
 }

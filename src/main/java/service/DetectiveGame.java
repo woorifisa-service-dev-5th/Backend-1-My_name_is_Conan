@@ -228,7 +228,7 @@ public class DetectiveGame {
             Thread.sleep(1000);
             System.out.printf("%s: 그게 사실... %s씨의 팀이 해커톤 우승을 못하게 하려고... 그래서 홧김에.. 죄송합니다🥹\n", suspect.getName(), victim.getName());
             Thread.sleep(1000);
-            System.out.printf("\n%s씨는 끝내 자신의 범행을 인정했고, 피로그래밍 22기 해커톤에서 퇴출당했습니다.\n", suspect.getName());
+            System.out.printf("\n%s씨는 끝내 자신의 범행을 인정했고, 우리 FISA 해커톤에서 퇴출당했습니다.\n", suspect.getName());
             Thread.sleep(1000);
             System.out.println("사건은 해결되었고, 모든 사람들이 안도의 한숨을 내쉬었습니다. 당신의 활약 덕분입니다.");
             Thread.sleep(1000);

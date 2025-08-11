@@ -3,7 +3,7 @@ package entity;
 import types.Color;
 import types.HairType;
 import types.PersonType;
-import types.Sex;
+import types.Gender;
 import java.util.Random;
 
 public class Person {
@@ -13,7 +13,7 @@ public class Person {
     private Color inner;
     private Color pants;
     private Color socks;
-    private Sex sex; // Gson will use a setter to fill this
+    private Gender gender; // Gson will use a setter to fill this
     private Color shoes;
     private PersonType personType;
     private boolean isDead;
@@ -24,14 +24,14 @@ public class Person {
     public Person() {}
 
     // You can also use this constructor for manual creation.
-    public Person(String name, Sex sex) {
+    public Person(String name, Gender gender) {
         this.name = name;
-        this.sex = sex;
+        this.gender = gender;
     }
 
-    public Person(String name, Sex sex, PersonType personType) {
+    public Person(String name, Gender gender, PersonType personType) {
         this.name = name;
-        this.sex = sex;
+        this.gender = gender;
         this.personType = personType;
     }
 
@@ -52,7 +52,7 @@ public class Person {
     public Color getInner() { return inner; }
     public Color getPants() { return pants; }
     public Color getSocks() { return socks; }
-    public Sex getSex() { return sex; }
+    public Gender getGender() { return gender; }
     public Color getShoes() { return shoes; }
     public PersonType getPersonType() { return personType; }
     public boolean isDead() { return isDead; }
@@ -64,7 +64,7 @@ public class Person {
     public void setInner(Color inner) { this.inner = inner; }
     public void setPants(Color pants) { this.pants = pants; }
     public void setSocks(Color socks) { this.socks = socks; }
-    public void setSex(Sex sex) { this.sex = sex; } // crucial for Gson
+    public void setGender(Gender gender) { this.gender = gender; } // crucial for Gson
     public void setShoes(Color shoes) { this.shoes = shoes; }
     public void setPersonType(PersonType personType) { this.personType = personType; }
     public void setDead(boolean dead) { isDead = dead; }
@@ -73,7 +73,7 @@ public class Person {
     public String toString() {
         return "Person{" +
                 "name='" + name + '\'' +
-                ", sex=" + sex +
+                ", gender=" + gender +
                 ", hair=" + hair +
                 ", outer=" + outer +
                 ", inner=" + inner +

@@ -98,7 +98,7 @@ public class GameService {
     // 참가자 조사 (특성 공개 등)
     public void investigatePerson(Person person) {
         System.out.println(person.getName() + "을(를) 조사합니다.");
-        System.out.println("성별: " + person.getSex());
+        System.out.println("성별: " + person.getGender());
         System.out.println("머리 색깔: " + person.getHair());
         // 추가적인 특성 정보 출력
     }
